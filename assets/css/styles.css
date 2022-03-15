@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+body{
+    margin: 0;
+    font-family:  "Montserrat";
+}
+
+/* HEADER */
+.container-logo{
+    background-color: #FFC107;
+    text-align: center;
+}
+
+nav{
+    background-color: #FFA000;
+    text-align: center;        
+}
+
+.menu{
+    margin: 0;
+    padding: 0;       
+}
+
+.menu-item{
+    display: inline;       
+}
+
+.menu-item-link{
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 30px;
+    text-decoration: none;    
+}
+/* RECEITA-ATUAL */
+.receita-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.receita{
+    text-align: left;
+    margin: auto 50px;
+    width: 60%;
+}
+
+.receita-container{
+    width: 592px;
+}
+
+.container-tags{
+    margin: 20px 0 40px 0;
+}
+
+
+.tags{
+    border: 1px solid green;
+    border-radius: 20px;
+    color: green;
+    padding: 1px 20px;
+    font-weight: bold;
+}
+
+.ingredientes-titulo{
+    font-weight: bold;
+}
+
+.ingredientes-lista{
+    list-style: none;
+    margin: -15px 0 40px 0;
+}
+.receita-video{
+    margin: 10px 0 40px 0;
+}
+
+.relacionados{
+    width: 40%;
+}
+
+.card-receita{    
+    width: 345px;
+    align-items: center;
+    box-shadow: 0px 2px 2px 0px grey;
+    text-align: center;    
+    margin: auto auto 40px auto;
+}
+
+.card-receita div {
+    padding: 15px 0;
+    font-weight: bold;
+  }
+
+/* FOOTER */  
+footer{
+    display: flex;
+    background-color: #FFC107;
+    align-items: center;
+    color: #FFF;
+    font-weight: bold;
+    
+}
+
+/* CONTATO */
+
+.contatos-main{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.contato-banner{
+    background-image: url(../images/contato-image.png);
+    font-size: 70px;
+    color: #FFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 405px;
+    padding: 50px;     
+}
+
+.contato-imagem h3{
+    text-shadow: black 5px 5px 10px;     
+}
+
+.contato-section{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 40px auto;
+    gap: 20px;      
+}
+
+.contato-banner-lateral{
+    width: 30%;
+    height: 800px;
+    background-image: url(../images/contatos-banner-lateral.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.contato-form{
+    width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 20px 40px;    
+    justify-content: center;
+}
+
+.contato-form h1{
+    color: #FFC107;
+    font-size: 40px;
+}
+
+.contato-form input{
+    padding: 10px 0;
+}
+
+.contato-form textarea{
+    padding: 60px 0;
+}
+
+.contato-form button{
+    color: #FFF;
+    background-color: #FFC107;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.contato-form input, textarea{
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.contato-form, .contato-form input, textarea {
+    border: 1px solid #FFC107;
+    border-radius: 5px;
+    
+}
+
+/* RECEITAS */
+
+.receitas-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 40px auto;
+}
+
+.receitas-section{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+.receitas-card{
+    display: flex;
+    flex-flow: column nowrap;    
+    align-items: center;
+}
+
+.receitas-card div{
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.receitas-conferir{
+    color: #FFF;
+    background-color: green;
+    padding: 5px 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* INICIO */
+.inicio-main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-banner1{
+    width: 100%;
+    height: 638px;
+    background-image: url(../images/inicio-banner1.png);
+    text-align: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inicio-banner1 h3{
+    padding: 100px 80px 120px 0;
+    font-size: 70px;
+    color: #FFF;
+    text-shadow: black 5px 5px 5px;
+}
+
+.inicio-main h1{
+    color: #FFA000;
+    padding: 20px;
+}
+
+.inicio-section{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 50px;
+    margin: 10px 0 40px 0;   
+}
+
+.inicio-banner2{
+    height: 772px;
+    width: 100%;
+    background-image: url(../images/inicio-banner2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: right;
+}
