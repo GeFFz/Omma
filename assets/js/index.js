@@ -53,7 +53,7 @@ const exibirReceitas = () => {
     console.log("Titulo = " + receita.titulo);
 
     receita.ingredientes.forEach((ingrediente) => {
-      console.log("ingredientes =",ingrediente)
+      console.log("ingredientes =", ingrediente)
     });
 
     console.log("É vegano? " + receita.vegano);
@@ -82,17 +82,57 @@ const deletarReceita = (id) => {
 // deletarReceita("RECEITA1");
 // console.log(listaDeReceitas);
 
-const buscarReceita = (busca) => {
-  textBusca = ""
+
+const buscarReceita = (buscar) => {
+  console.log("Resultado da busca");
+  let itensBuscados = 0;
+
+  listaDeReceitas.forEach((receita) => {
+    if (receita.titulo.toLowerCase().includes(buscar.toLowerCase())) {
+      console.log("--------------------------------");
+      console.log("Titulo = " + receita.titulo);
+
+      receita.ingredientes.forEach((ingrediente) => {
+        console.log("ingredientes =", ingrediente);
+      });
+
+      console.log("É vegano? " + receita.vegano);
+      console.log("--------------------------------");
+      itensBuscados++;
+    };
+  });
+  if (itensBuscados === 0) {
+    return console.log("Nenhuma receita encontrada.");
+  };
+}
+// buscarReceita("A")
+
+
+const atualizarReceita = (id, titulo, dificuldade, ingredientes, preparo, link, vegano) => {
+  let receitaAtualizada = 0
   listaDeReceitas.forEach(receita => {
-    if (busca in receita.titulo == true ){
-      textBusca+=receita.titulo;
+    if (id === receita.id) {
+      receita.titulo = titulo;
+      receita.dificuldade = dificuldade;
+      receita.ingredientes = ingredientes;
+      receita.preparo = preparo;
+      receita.link = link;
+      receita.vegano = vegano;
+      receitaAtualizada++;
     }
   });
-  
 
-  console.log(textBusca)
+  if (receitaAtualizada === 0) {
+    return console.log("Não existe receita cadastrada com o ID", id);
+  }
+  return console.log(`Receita atualizada com sucesso!\n ID: ${id}\n Titulo atual: ${titulo} `);
 }
-
-buscarReceita("Bata")
-
+// atualizarReceita(
+//   2,
+//   "Soja",
+//   "Difícil",
+//   ["tomate", "pimentão", "cebola"],
+//   "Soja deliciosa bla bla...",
+//   "https://www.youtube.com/watch?v=WiLwc7jAs6g",
+//   true
+// );
