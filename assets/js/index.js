@@ -76,63 +76,56 @@ const deletarReceita = (id) => {
   if (deletado === 0) {
     return console.log("Receita não encontrada");
   }
-
 }
 // console.log(listaDeReceitas);
 // deletarReceita("RECEITA1");
 // console.log(listaDeReceitas);
 
 
-const buscarReceita = (buscar) => {
-  console.log("Resultado da busca");
-  let itensBuscados = 0;
+const buscarReceita = (busca) => {
+  const resultados = listaDeReceitas.filter(
+    (receita) =>
+    receita.titulo.toLowerCase().indexOf(busca.toLowerCase()) != -1
+  );
 
+  if (!resultados.length) {
+    console.log("Não foi encontrado receitas");
+  }
+
+  return console.log(resultados);
+};
+// buscarReceita("ta")
+
+
+const atualizarReceita = (id, objReceita) => {
+  let receitaAtualizada = false;
   listaDeReceitas.forEach((receita) => {
-    if (receita.titulo.toLowerCase().includes(buscar.toLowerCase())) {
-      console.log("--------------------------------");
-      console.log("Titulo = " + receita.titulo);
-
-      receita.ingredientes.forEach((ingrediente) => {
-        console.log("ingredientes =", ingrediente);
-      });
-
-      console.log("É vegano? " + receita.vegano);
-      console.log("--------------------------------");
-      itensBuscados++;
-    };
-  });
-  if (itensBuscados === 0) {
-    return console.log("Nenhuma receita encontrada.");
-  };
-}
-// buscarReceita("A")
-
-
-const atualizarReceita = (id, titulo, dificuldade, ingredientes, preparo, link, vegano) => {
-  let receitaAtualizada = 0
-  listaDeReceitas.forEach(receita => {
-    if (id === receita.id) {
-      receita.titulo = titulo;
-      receita.dificuldade = dificuldade;
-      receita.ingredientes = ingredientes;
-      receita.preparo = preparo;
-      receita.link = link;
-      receita.vegano = vegano;
-      receitaAtualizada++;
+    if (receita.id != id) {
+      return
     }
+
+    if (objReceita.titulo) receita.titulo = objReceita.titulo;
+    if (objReceita.dificuldade) receita.dificuldade = objReceita.dificuldade;
+    if (objReceita.ingredientes) receita.ingredientes = objReceita.ingredientes;
+    if (objReceita.preparo) receita.preparo = objReceita.preparo;
+    if (objReceita.link) receita.link = objReceita.link;
+    if (objReceita.vegano) receita.vegano = objReceita.vegano;
+    receitaAtualizada = true;
   });
 
-  if (receitaAtualizada === 0) {
+  if (!receitaAtualizada) {
     return console.log("Não existe receita cadastrada com o ID", id);
   }
-  return console.log(`Receita atualizada com sucesso!\n ID: ${id}\n Titulo atual: ${titulo} `);
+  console.log(`Receita atualizada com sucesso! `);
 }
+// //id, titulo, dificuldade, ingredientes:[], preparo, link, vegano:bol
 // atualizarReceita(
-//   2,
-//   "Soja",
-//   "Difícil",
-//   ["tomate", "pimentão", "cebola"],
-//   "Soja deliciosa bla bla...",
-//   "https://www.youtube.com/watch?v=WiLwc7jAs6g",
-//   true
+//   2, {
+//     titulo: "Soja Cozida",
+//     ingredientes: ["soja", "batata", "cebola", "tomate"],
+//     preparo: "mexe mexe mexe, mexe mexe mexe, mexe...",
+//     vegano: true
+//   }
 // );
+
+// exibirReceitas();
